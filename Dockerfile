@@ -4,7 +4,7 @@ WORKDIR  /NLTK_Tools
 
 COPY main.py ./
 COPY requirements.txt ./
-COPY /epubtxt/omega-exile.epub.txt ./epubtxt/omega-exile.epub.txt
+COPY /epubtxt/ ./epubtxt/
 
 RUN pip install -r requirements.txt
 
