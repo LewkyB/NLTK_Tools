@@ -5,6 +5,7 @@ from wordcloud import WordCloud
 
 nltk.download('stopwords')
 nltk.download('averaged_perceptron_tagger')
+nltk.download('punkt')
 
 def tokenizer(path):
     raw = open(path, 'rU').read()
@@ -15,6 +16,7 @@ def tag_and_chunk(raw_tokenized_words):
 
     tagged = nltk.pos_tag(raw_tokenized_words)
 
+    # choose sentence structure to turn into chunks
     chunkGram = r"""Chunk: {<RB.?>*<VB.?>*<NNP><NN>?}
                                 }<VB.?|IN|DT>+{"""
 
